@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>${groupId}</groupId>
+  <artifactId>${artifactId}</artifactId>
+  <version>${version}</version>
+  <name>${name}</name>
+  <packaging>jar</packaging>
+  <description>OBDX OAS Generator archetype stub generator</description>
+
+  <properties>
+    <maven.compiler.source>25</maven.compiler.source>
+    <maven.compiler.target>25</maven.compiler.target>
+    <archetype-packaging.version>3.4.1</archetype-packaging.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <springboot.version>4.1.0-M1</springboot.version>
+    <jackson-databind-nullable.version>0.2.8</jackson-databind-nullable.version>
+    <jakarta.validation-api.version>4.0.0-M1</jakarta.validation-api.version>
+    <openapi-generator-maven-plugin.version>7.19.0</openapi-generator-maven-plugin.version>
+    <springdoc-openapi-starter-webmvc-ui.version>3.0.1</springdoc-openapi-starter-webmvc-ui.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <version>${springboot.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.openapitools</groupId>
+      <artifactId>jackson-databind-nullable</artifactId>
+      <version>${jackson-databind-nullable.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+      <version>${springdoc-openapi-starter-webmvc-ui.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>jakarta.validation</groupId>
+      <artifactId>jakarta.validation-api</artifactId>
+      <version>${jakarta.validation-api.version}</version>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openapitools</groupId>
+        <artifactId>openapi-generator-maven-plugin</artifactId>
+        <version>${openapi-generator-maven-plugin.version}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <inputSpec>
+                ${project.basedir}/openapi.yaml
+              </inputSpec>
+              <generatorName>spring</generatorName>
+
+              <apiPackage>com.obdx.oas.stub.api</apiPackage>
+              <modelPackage>com.obdx.oas.stub.model</modelPackage>
+
+              <supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>
+              <configOptions>
+                <delegatePattern>true</delegatePattern>
+                <useTags>true</useTags>
+                <useSpringBoot3>true</useSpringBoot3>
+                <useSwaggerUI>true</useSwaggerUI>
+                <hideGenerationTimestamp>true</hideGenerationTimestamp>
+                <dateLibrary>java8</dateLibrary>
+                <generateConstructorWithAllArgs>true</generateConstructorWithAllArgs>
+              </configOptions>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/${githubRepo}</url>
+    </repository>
+  </repositories>
+
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/${githubRepo}</url>
+    </repository>
+    <snapshotRepository>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/${githubRepo}</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+</project>
