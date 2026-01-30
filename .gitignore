@@ -1,6 +1,4 @@
 /target/
 /.idea/
-/dog-trainer-puppy.iml
 /.m2/
-/dog-trainer-pack/
-/generated-dog-trainer-pack/
+/generated-obdx-oas-definition/
