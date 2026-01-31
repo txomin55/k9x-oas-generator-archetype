@@ -66,8 +66,8 @@
               </inputSpec>
               <generatorName>spring</generatorName>
 
-              <apiPackage>com.obdx.oas.stub.api</apiPackage>
-              <modelPackage>com.obdx.oas.stub.model</modelPackage>
+              <apiPackage>com.k9x.oas.stub.api</apiPackage>
+              <modelPackage>com.k9x.oas.stub.model</modelPackage>
 
               <supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>
               <configOptions>
