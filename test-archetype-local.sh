@@ -6,7 +6,7 @@ set -euo pipefail
 #   ./test-archetype-local.sh /path/to/openapi.yaml [k9x-oas-generator-archetype_version]
 #
 # Env overrides:
-#   K9X_PROJECT_NAME (default: oas-generator-archetype)
+#   WHATEVER_PROJECT_NAME (default: oas-generator-archetype)
 #   ARCHETYPE_GROUP_ID (default: com.k9x.oas-generator-archetype)
 #   MAVEN_OPTS (default: -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository)
 
@@ -16,10 +16,10 @@ if [[ $# -lt 1 ]]; then
 fi
 
 OPENAPI_PATH="$1"
-K9X_OAS_GENERATOR_ARCHETYPE_PROJECT_VERSION=""
+WHATEVER_OAS_GENERATOR_ARCHETYPE_PROJECT_VERSION=""
 
 if [[ $# -ge 2 ]]; then
-  K9X_OAS_GENERATOR_ARCHETYPE_PROJECT_VERSION="$2"
+  WHATEVER_OAS_GENERATOR_ARCHETYPE_PROJECT_VERSION="$2"
 fi
 
 if [[ ! -f "$OPENAPI_PATH" ]]; then
@@ -28,13 +28,13 @@ if [[ ! -f "$OPENAPI_PATH" ]]; then
 fi
 
 CI_PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
-K9X_PROJECT_NAME="${K9X_PROJECT_NAME:-oas-generator-archetype}"
+WHATEVER_PROJECT_NAME="${WHATEVER_PROJECT_NAME:-oas-generator-archetype}"
 ARCHETYPE_GROUP_ID="${ARCHETYPE_GROUP_ID:-com.k9x}"
 
-if [[ -z "$K9X_OAS_GENERATOR_ARCHETYPE_PROJECT_VERSION" ]]; then
-  K9X_OAS_GENERATOR_ARCHETYPE_PROJECT_VERSION="$(awk -F'[<>]' '/<version>/{print $3; exit}' "$CI_PROJECT_DIR/pom.xml")"
-  if [[ -z "$K9X_OAS_GENERATOR_ARCHETYPE_PROJECT_VERSION" ]]; then
-    echo "K9X_OAS_GENERATOR_ARCHETYPE_PROJECT_VERSION is required as argument 2 or in pom.xml." >&2
+if [[ -z "$WHATEVER_OAS_GENERATOR_ARCHETYPE_PROJECT_VERSION" ]]; then
+  WHATEVER_OAS_GENERATOR_ARCHETYPE_PROJECT_VERSION="$(awk -F'[<>]' '/<version>/{print $3; exit}' "$CI_PROJECT_DIR/pom.xml")"
+  if [[ -z "$WHATEVER_OAS_GENERATOR_ARCHETYPE_PROJECT_VERSION" ]]; then
+    echo "WHATEVER_OAS_GENERATOR_ARCHETYPE_PROJECT_VERSION is required as argument 2 or in pom.xml." >&2
     exit 1
   fi
 fi
@@ -54,7 +54,7 @@ fi
 
 export MAVEN_OPTS="${MAVEN_OPTS:--Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository}"
 
-WORKDIR="$CI_PROJECT_DIR/generated-k9x-oas-definition"
+WORKDIR="$CI_PROJECT_DIR/generated-oas-definition"
 rm -rf "$WORKDIR"
 mkdir -p "$WORKDIR"
 
@@ -64,10 +64,10 @@ mvn -f "$CI_PROJECT_DIR/pom.xml" clean install -s "$CI_PROJECT_DIR/ci_settings.x
 # 2) Generate project from archetype
 mvn archetype:generate -B \
   -DarchetypeGroupId=$ARCHETYPE_GROUP_ID \
-  -DarchetypeArtifactId=$K9X_PROJECT_NAME \
-  -DarchetypeVersion=$K9X_OAS_GENERATOR_ARCHETYPE_PROJECT_VERSION \
+  -DarchetypeArtifactId=$WHATEVER_PROJECT_NAME \
+  -DarchetypeVersion=$WHATEVER_OAS_GENERATOR_ARCHETYPE_PROJECT_VERSION \
   -DarchetypeCatalog=local \
-  -DgroupId=com.k9x \
+  -DgroupId=com.whatever \
   -DartifactId=oas-definition \
   -Dname=oas-definition \
   -DgithubRepo=local \

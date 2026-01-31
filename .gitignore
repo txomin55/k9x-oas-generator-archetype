@@ -1,5 +1,4 @@
 /target/
 /.idea/
 /.m2/
-/generated-obdx-oas-definition/
-/generated-k9x-oas-definition/
+/generated-oas-definition/
