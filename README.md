@@ -10,7 +10,7 @@ You must set a settings.xml for Maven where the repo:
 <repositories>
     <repository>
         <id>github</id>
-        <url>https://maven.pkg.github.com/txomin55/obdx-oas-generator-archetype</url>
+        <url>https://maven.pkg.github.com/txomin55/k9x-oas-generator-archetype</url>
     </repository>
 </repositories>
 ````
@@ -19,7 +19,7 @@ You must set a settings.xml for Maven where the repo:
 
 First, the dependency must be downloaded :
 
-- <code>mvn dependency:get -Dartifact=com.obdx.oas-generator-archetype:oas-generator-archetype:$OBDX_OAS_GENERATOR_ARCHETYPE_PROJECT_VERSION -DremoteRepositories=github::::https://maven.pkg.github.com/txomin55/obdx-oas-generator-archetype -s ci_settings.xml</code>
+- <code>mvn dependency:get -Dartifact=com.obdx.oas-generator-archetype:oas-generator-archetype:$OBDX_OAS_GENERATOR_ARCHETYPE_PROJECT_VERSION -DremoteRepositories=github::::https://maven.pkg.github.com/txomin55/k9x-oas-generator-archetype -s ci_settings.xml</code>
 
 Then, the archetype catalogue must be updated:
 

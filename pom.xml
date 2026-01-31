@@ -31,18 +31,18 @@
   <repositories>
     <repository>
       <id>github</id>
-      <url>https://maven.pkg.github.com/txomin55/obdx-oas-generator-archetype</url>
+      <url>https://maven.pkg.github.com/txomin55/k9x-oas-generator-archetype</url>
     </repository>
   </repositories>
 
   <distributionManagement>
     <repository>
       <id>github</id>
-      <url>https://maven.pkg.github.com/txomin55/obdx-oas-generator-archetype</url>
+      <url>https://maven.pkg.github.com/txomin55/k9x-oas-generator-archetype</url>
     </repository>
     <snapshotRepository>
       <id>github</id>
-      <url>https://maven.pkg.github.com/txomin55/obdx-oas-generator-archetype</url>
+      <url>https://maven.pkg.github.com/txomin55/k9x-oas-generator-archetype</url>
     </snapshotRepository>
   </distributionManagement>
 </project>
