@@ -8,7 +8,7 @@
   <version>${version}</version>
   <name>${name}</name>
   <packaging>jar</packaging>
-  <description>OBDX OAS Generator archetype stub generator</description>
+  <description>K9X OAS Generator archetype stub generator</description>
 
   <properties>
     <maven.compiler.source>25</maven.compiler.source>
