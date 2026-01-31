@@ -3,12 +3,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.obdx</groupId>
+  <groupId>com.k9x</groupId>
   <artifactId>oas-generator-archetype</artifactId>
   <version>1.0.0</version>
   <packaging>maven-archetype</packaging>
-  <name>oas-generator-archetype</name>
-  <description>OAS generator archetype</description>
+  <name>k9x-oas-generator-archetype</name>
+  <description>K9X OAS Generator archetype stub generator</description>
 
   <properties>
     <maven.compiler.source>25</maven.compiler.source>
