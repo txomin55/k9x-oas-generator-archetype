@@ -8,7 +8,7 @@
   <version>${version}</version>
   <name>${name}</name>
   <packaging>jar</packaging>
-  <description>K9X OAS Generator archetype stub generator</description>
+  <description>OAS Generator archetype stub generator</description>
 
   <properties>
     <maven.compiler.source>25</maven.compiler.source>
@@ -66,8 +66,8 @@
               </inputSpec>
               <generatorName>spring</generatorName>
 
-              <apiPackage>com.k9x.oas.stub.api</apiPackage>
-              <modelPackage>com.k9x.oas.stub.model</modelPackage>
+              <apiPackage>${groupId}.oas.stub.api</apiPackage>
+              <modelPackage>${groupId}.oas.stub.model</modelPackage>
 
               <supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>
               <configOptions>
