@@ -15,7 +15,7 @@
     <maven.compiler.target>25</maven.compiler.target>
     <archetype-packaging.version>3.4.1</archetype-packaging.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <springboot.version>4.1.0-M1</springboot.version>
+    <springboot.version>4.1.0</springboot.version>
     <jackson-databind-nullable.version>0.2.8</jackson-databind-nullable.version>
     <jakarta.validation-api.version>4.0.0-M1</jakarta.validation-api.version>
     <openapi-generator-maven-plugin.version>7.19.0</openapi-generator-maven-plugin.version>
