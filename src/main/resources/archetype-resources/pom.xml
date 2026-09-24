@@ -35,10 +35,14 @@
       <version>${jackson-databind-nullable.version}</version>
     </dependency>
 
+    <!-- Provided, not compile: the generated stubs only need springdoc (swagger annotations) to compile. As a
+         compile dependency it reached every consumer's runtime, Swagger UI, swagger-core and Hibernate
+         Validator included, whether it served API docs or not. A consumer that wants Swagger UI declares it. -->
     <dependency>
       <groupId>org.springdoc</groupId>
       <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
       <version>${springdoc-openapi-starter-webmvc-ui.version}</version>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
